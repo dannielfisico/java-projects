@@ -18,7 +18,7 @@ public class ExercicioArrayAula75 {
 		
 		ProductsStore[] vect = new ProductsStore[quantity];
 		double sum = 0;	
-			for(int i = 0; i < quantity; i++) {
+			for(int i = 0; i < vect.length; i++) {
 				System.out.printf("%nNome: ");
 				String name = sc.nextLine();
 				System.out.printf("Preço (%s): ", name);
@@ -31,7 +31,7 @@ public class ExercicioArrayAula75 {
 			Arrays.stream(vect).forEach(System.out::println);
 			System.out.println();
 			//System.out.println(Arrays.toString(vect));
-			System.out.printf("A média dos preços é: R$ %.2f%n", sum/quantity);
+			System.out.printf("A média dos preços é: R$ %.2f%n", sum/vect.length);
 			
 		sc.close();
 

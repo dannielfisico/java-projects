@@ -22,7 +22,7 @@ public class ExercicioArrayAula74 {
 		
 		double media = soma/npessoas;
 		
-		System.out.printf("%nA médias das alturas é: %.2fm²",media);
+		System.out.printf("%nA médias das alturas é: %.2fm",media);
 		
 		
 		sc.close();

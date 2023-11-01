@@ -13,12 +13,14 @@ public class ExercicioArrayAula74 {
 		System.out.print("Quantas pessoas? ");
 		int npessoas = sc.nextInt();
 		double[] alturas = new double[npessoas];
+		
 		double soma = 0;
-		for(int i = 0; i < npessoas; i++) {
-			System.out.printf("Altura da pessoa %d",i+1);
-			alturas[i] = sc.nextDouble();
-			soma+= alturas[i];
-		}
+		
+			for(int i = 0; i < npessoas; i++) {
+				System.out.printf("Altura da pessoa %d: ",i+1);
+				alturas[i] = sc.nextDouble();
+				soma+= alturas[i];
+			}
 		
 		double media = soma/npessoas;
 		

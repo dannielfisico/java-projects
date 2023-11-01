@@ -27,6 +27,8 @@ public class ExercicioArrayAula74 {
 		System.out.printf("%nA médias das alturas é: %.2fm",media);
 		
 		
+		
+		
 		sc.close();
 	}
 

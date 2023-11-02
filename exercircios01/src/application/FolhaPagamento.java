@@ -51,7 +51,7 @@ public class FolhaPagamento {
 				System.out.print("Enter the percentage: ");
 				double percent = sc.nextDouble();
 				vect[index].increaseSalary(percent);
-				System.out.printf("%nList of employees:");
+				System.out.printf("%nList of employees:%n");
 				Arrays.stream(vect).forEach(System.out::println);
 			} else {
 				System.out.println("This id does not exist!");

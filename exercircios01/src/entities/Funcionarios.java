@@ -32,8 +32,9 @@ public class Funcionarios {
 			salary += salary * (percent/100);			
 	}
 	
+		
 	public String toString() {
-		return String.format("%d, %s, $ %.2f", getKey(), getName(),getSalary());
+		return String.format("\t%d,\t%s,\t$ %.2f", getKey(), getName(),getSalary());
 	}
 
 }

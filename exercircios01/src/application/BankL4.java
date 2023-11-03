@@ -1,9 +1,18 @@
-package application;
+git package application;
+
+import java.util.Locale;
+import java.util.Scanner;
 
 public class BankL4 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Locale.setDefault(Locale.US);
+		Scanner osk = new Scanner(System.in);
+		
+		
+		
+		
+		osk.close();
 
 	}
 

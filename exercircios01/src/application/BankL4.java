@@ -57,8 +57,8 @@ public class BankL4 {
 				System.out.println("\nDados da conta:");
 				System.out.println(account);
 			
-			
-			
+				System.out.println("Serviços disponíveis para sua conta " + account.getClient());
+				
 			
 		}
 		osk.close();

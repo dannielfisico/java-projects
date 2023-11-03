@@ -4,6 +4,7 @@ public class AccountLevel4 {
 	private int number;
 	private String client;
 	private double balance;
+	private String msg;
 	
 	public AccountLevel4(int number, String client, double initialDeposity) {
 		this.number = number;
@@ -15,6 +16,14 @@ public class AccountLevel4 {
 		this.number = number;
 		this.client = client;
 
+	}
+	
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+	
+	public String getMsg() {
+		return msg;
 	}
 	
 	public int getNumber() {

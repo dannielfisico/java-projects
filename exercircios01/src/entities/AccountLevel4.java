@@ -51,7 +51,7 @@ public class AccountLevel4 {
 	}
 
 	public String toString() {
-		return String.format("%nNumber: %d%nClient: %s%nBalance: $%.2f",number, client, balance );
+		return String.format("%nNúmero: %d%nCliente: %s%nSaldo: $%.2f",number, client, balance );
 	}
 		
 }

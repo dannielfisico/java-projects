@@ -47,11 +47,11 @@ public class AccountLevel4 {
 	}
 	
 	public void withdraw(double amount) {
-		balance -= amount - 5.00;
+		balance -= amount + 5.00;
 	}
 
 	public String toString() {
-		return String.format("%nNúmero: %d%nCliente: %s%nSaldo: $%.2f",number, client, balance );
+		return String.format("%nStatus: %s%nNúmero: %d%nCliente: %s%nSaldo: $%.2f",msg, number, client, balance );
 	}
 		
 }

@@ -49,17 +49,41 @@ public class BankL4 {
 					System.out.print("Informe o valor do depósito inicial: ");
 					double initialDeposty = osk.nextDouble();
 					account = new AccountLevel4(number, client, initialDeposty);
-					
 				} else {
 					account = new AccountLevel4(number, client);
 				}
-				
+
+				account.setMsg("Conta criada com sucesso.");
 				System.out.println("\nDados da conta:");
 				System.out.println(account);
-			
 				System.out.println("Serviços disponíveis para sua conta " + account.getClient());
-				
 			
+				do {
+					System.out.println("(1) DEPÓSITO \n(2) SAQUE\n(3) SAIR DO PROGRAMA");
+					response = osk.next().charAt(0);
+					if(response == '1') {
+						System.out.print("Qual valor deseja depositar? ");
+						double amount = osk.nextDouble();
+						account.deposity(amount);
+						System.out.println("#_#_#_#_Dados atualizados_#_#_#_#");
+						account.setMsg(String.format("Depósito de $%.2f realizado com sucesso.\n", amount));
+						System.out.println(account);
+						response ='0';
+					} else if (response == '2') {
+						System.out.println("Qual valor deseja sacar? ");
+						double amount = osk.nextDouble();
+						account.withdraw(amount);
+						System.out.println("#_#_#_#_Dados atualizados_#_#_#_#");
+						account.setMsg(String.format("Saque de $%.2f realizado com sucesso.\n", amount));
+						System.out.println(account);
+						response ='0';
+						
+					} else if (response == '3') {
+						System.out.printf("Até mais %s", account.getClient());
+						response = '3';
+					}
+					
+				} while (response == '0');
 		}
 		osk.close();
 

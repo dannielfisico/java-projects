@@ -12,6 +12,7 @@ public class BankL4 {
 		Scanner osk = new Scanner(System.in);
 		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		System.out.println("$$$$$$$$$$ BANK LEVEL 4 $$$$$$$$$$");
+		System.out.println("$$$$$$$$$$  BEM VINDO   $$$$$$$$$$");
 		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		System.out.println();
 		
@@ -19,7 +20,6 @@ public class BankL4 {
 		char response = '0';
 		
 		do {
-			System.out.println("Bem vindo ao BANK LEVEL 4");
 			System.out.println("Serviços disponíveis:");
 			System.out.println("(1) Abrir Conta \n(2) Sair do programa");
 			System.out.println("Opção: ");
@@ -54,9 +54,9 @@ public class BankL4 {
 				}
 
 				//account.setMsg("Conta criada com sucesso.");
-				System.out.println("\nDados da conta:");
+				System.out.print("\nDados da conta");
 				System.out.println(account);
-				System.out.println("Serviços disponíveis para sua conta " + account.getClient());
+				System.out.println("\nServiços disponíveis para sua conta " + account.getClient());
 			
 				do {
 					System.out.println("(1) DEPÓSITO \n(2) SAQUE\n(3) SAIR DO PROGRAMA");

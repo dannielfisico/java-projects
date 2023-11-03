@@ -10,12 +10,13 @@ public class AccountLevel4 {
 		this.number = number;
 		this.client = client;
 		deposity(initialDeposity);
+		msg = "Conta criada com sucesso.";
 	}
 	
 	public AccountLevel4(int number, String client) {
 		this.number = number;
 		this.client = client;
-
+		msg = "Conta criada com sucesso.";
 	}
 	
 	public void setMsg(String msg) {
@@ -43,11 +44,24 @@ public class AccountLevel4 {
 	}
 	
 	public void deposity(double amount) {
-		balance += amount;
+		if(amount <= 0) {
+			msg = "Operação Abortada.";
+		} else {
+			msg = String.format("Depósito de $%.2f realizado", amount); 
+			balance += amount;
+			
+		}
+		
 	}
 	
 	public void withdraw(double amount) {
-		balance -= amount + 5.00;
+		if (amount > balance) {
+			msg = "Operação Abortada.";
+		} else {
+			msg = String.format("Saque de $%.2f realizado (Taxa de: $ 5.00)", amount); 
+			balance -= amount + 5.00;
+			
+		}
 	}
 
 	public String toString() {

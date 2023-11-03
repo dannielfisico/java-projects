@@ -53,7 +53,7 @@ public class BankL4 {
 					account = new AccountLevel4(number, client);
 				}
 
-				account.setMsg("Conta criada com sucesso.");
+				//account.setMsg("Conta criada com sucesso.");
 				System.out.println("\nDados da conta:");
 				System.out.println(account);
 				System.out.println("Serviços disponíveis para sua conta " + account.getClient());
@@ -66,7 +66,7 @@ public class BankL4 {
 						double amount = osk.nextDouble();
 						account.deposity(amount);
 						System.out.println("#_#_#_#_Dados atualizados_#_#_#_#");
-						account.setMsg(String.format("Depósito de $%.2f realizado com sucesso.\n", amount));
+						//account.setMsg(String.format("Depósito de $%.2f realizado com sucesso.\n", amount));
 						System.out.println(account);
 						response ='0';
 					} else if (response == '2') {
@@ -74,7 +74,7 @@ public class BankL4 {
 						double amount = osk.nextDouble();
 						account.withdraw(amount);
 						System.out.println("#_#_#_#_Dados atualizados_#_#_#_#");
-						account.setMsg(String.format("Saque de $%.2f realizado com sucesso.\n", amount));
+						//account.setMsg(String.format("Saque de $%.2f realizado com sucesso.\n", amount));
 						System.out.println(account);
 						response ='0';
 						

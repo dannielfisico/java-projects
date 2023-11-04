@@ -80,8 +80,8 @@ public class Alunos {
 
 	private static String reflectionToString(Alunos alunos, Alunos alunos2) {
 		// TODO Auto-generated method stub
-		return String.format("Nome: %s, Notas: %s, Média: %.2f%nStatus: %s%n%s%n", name, Arrays.toString(notas), getSvg(), resultadoFinal(svg), statusNotas(notas));
-		//return null;
+		//return String.format("Nome: %s, Notas: %s, Média: %.2f%nStatus: %s%n%s%n", name, Arrays.toString(notas), getSvg(), resultadoFinal(svg), statusNotas(notas));
+		return null;
 	}
 
 	

@@ -36,8 +36,24 @@ public class Pessoa {
 		this.heigth = heigth;
 	}
 	
+	public boolean lessThan(int age) {
+		if(age < 16) {
+			return true;
+		}
+		
+		return false;
+	}
 	
-
+	public double percent(int lessThan16, int quantity) {
+		double percent = lessThan16/quantity;
+		return percent*100;
+	}
+	
+	public double average(double sum, int quantity) {
+		double average = sum/quantity;
+		return average;
+	}
+	
 	@Override
 	public String toString() {
 		return "Pessoa [name=" + name + ", age=" + age + ", heigth=" + heigth + "]";

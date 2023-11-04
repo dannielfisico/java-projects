@@ -1,5 +1,6 @@
 package application;
 
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -11,6 +12,10 @@ public class ExAbaixoDaMedia {
 		Locale.setDefault(Locale.US);
 		Scanner osk = new Scanner(System.in);
 		
+		Alunos aluno;
+		char response = 'n';
+		
+		do {
 		
 		System.out.print("Nome: ");
 		String name = osk.nextLine();
@@ -19,25 +24,30 @@ public class ExAbaixoDaMedia {
 		osk.nextLine();
 		double[] notas = new double[qtd];
 		
-		Alunos aluno = new Alunos(name, notas);
+		aluno = new Alunos(name, notas);
 		
-		for(int i = 0; i < notas.length; i++) {
-			System.out.printf("Nota %d de %s: ", i+1, name);
-			notas[i] = osk.nextDouble();
+			for(int i = 0; i < notas.length; i++) {
+				System.out.printf("Nota %d de %s: ", i+1, name);
+				notas[i] = osk.nextDouble();
+		
+				aluno.setNotas(notas);
+				aluno.calcularMedia(notas);
+			}
 			
-		
-		aluno.setNotas(notas);
-		
 			
-		}
+		System.out.print("\nDeseja cadastrar outro aluno (S/N)? ");
+		response = osk.next().charAt(0);
+		osk.nextLine();
+			if(response == 's' || response == 'S') {
+				response ='s';
+			} else {
+				response = 'n';
+			}
 		
-		System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-");
+		} while (response == 's' || response == 'S');
+		
 		System.out.println(aluno);
-		
-		System.out.printf("A média é: %.2f%n", aluno.calcularMedia(notas));
-		System.out.printf("Status: %s%n%s", aluno.resultadoFinal(aluno.calcularMedia(notas)) ,aluno.statusNotas(notas));
-		
-		
+
 		osk.close();
 
 	}

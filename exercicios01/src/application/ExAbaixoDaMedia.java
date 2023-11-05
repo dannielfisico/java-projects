@@ -13,9 +13,7 @@ public class ExAbaixoDaMedia {
 		Scanner osk = new Scanner(System.in);
 		
 		Alunos aluno = null;
-		char response = 'n';
-		
-		do {
+	
 		
 		System.out.print("Nome: ");
 		String name = osk.nextLine();
@@ -34,19 +32,10 @@ public class ExAbaixoDaMedia {
 				aluno.calcularMedia(notas);
 			}
 			
-			
-		System.out.print("\nDeseja cadastrar outro aluno (S/N)? ");
-		response = osk.next().charAt(0);
-		osk.nextLine();
-			if(response == 's' || response == 'S') {
-				response ='s';
-			} else {
-				response = 'n';
-			}
-		
-		} while (response == 's' || response == 'S');
 		
 		System.out.println(aluno);
+		
+		
 
 		osk.close();
 

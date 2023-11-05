@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import entities.ProductStore1;
 
+
 public class ProgramStore1 {
 
 	public static void main(String[] args) {
@@ -36,20 +37,15 @@ public class ProgramStore1 {
 				sum+= vect[i].getPrice();
 			}
 			
-			
 			double average = sum/quantity;
 			
 			System.out.printf("Preço médio $ %.2f\n", average);
-			System.out.printf("Preço médio $ %.2f\n", sum/vect.length);
+			System.out.printf("Preço médio $ %.2f\n",sum/vect.length);
 			
 			
 			
 			
 			
-			
-			
-			
-		
 		osk.close();
 
 	}

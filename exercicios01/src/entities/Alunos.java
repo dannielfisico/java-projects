@@ -1,5 +1,7 @@
 package entities;
 
+import java.util.Arrays;
+
 public class Alunos {
 	private int id;
 	private String name;
@@ -32,7 +34,7 @@ public class Alunos {
 	}
 
 
-	public double[] getNotas() {
+	public double[] getNotas(int  id) {
 		return notas;
 	}
 
@@ -79,20 +81,16 @@ public class Alunos {
 		return String.format("Notas baixas: %s%nNotas altas: %s", baixas, altas);
 	}
 
-/*
+
 	@Override
 	public String toString() {
-		return Alunos.reflectionToString(this, new Alunos(name, notas));
+		//return Alunos.reflectionToString(this, new Alunos(name, notas));
 		//return "Alunos [name=" + name + ", notas=" + Arrays.toString(notas) + ", svg=" + svg + "]";
-		//return String.format("Nome: %s, Notas: %s, Média: %.2f%nStatus: %s%n%s%n", getName(), Arrays.toString(notas), getSvg(), resultadoFinal(svg), statusNotas(notas));
+		return String.format("Nome: %s, Notas: %s, Média: %.2f%nStatus: %s%n%s%n", getName(), Arrays.toString(getNotas(id)), getSvg(), resultadoFinal(svg), statusNotas(notas));
 	}
 
-*/
-	private static String reflectionToString(Alunos alunos, Alunos alunos2) {
-		// TODO Auto-generated method stub
-		//return String.format("Nome: %s, Notas: %s, Média: %.2f%nStatus: %s%n%s%n", name, Arrays.toString(notas), getSvg(), resultadoFinal(svg), statusNotas(notas));
-		return null;
-	}
+
+	
 
 	
 	

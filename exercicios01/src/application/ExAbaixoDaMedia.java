@@ -12,7 +12,7 @@ public class ExAbaixoDaMedia {
 		Locale.setDefault(Locale.US);
 		Scanner osk = new Scanner(System.in);
 		
-		Alunos aluno;
+		Alunos aluno = null;
 		char response = 'n';
 		
 		do {

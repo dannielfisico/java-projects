@@ -1,16 +1,26 @@
 package entities;
 
 public class Alunos {
+	private int id;
 	private String name;
 	private double[] notas;
 	private double svg;
 	
 	
-	public Alunos(String name, double[] notas) {
+	public Alunos(int id,String name, double[] notas) {
+		this.id = id;
 		this.name = name;
 		this.notas = notas;
 	}
 
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 
 	public String getName() {
 		return name;
@@ -69,7 +79,7 @@ public class Alunos {
 		return String.format("Notas baixas: %s%nNotas altas: %s", baixas, altas);
 	}
 
-
+/*
 	@Override
 	public String toString() {
 		return Alunos.reflectionToString(this, new Alunos(name, notas));
@@ -77,7 +87,7 @@ public class Alunos {
 		//return String.format("Nome: %s, Notas: %s, Média: %.2f%nStatus: %s%n%s%n", getName(), Arrays.toString(notas), getSvg(), resultadoFinal(svg), statusNotas(notas));
 	}
 
-
+*/
 	private static String reflectionToString(Alunos alunos, Alunos alunos2) {
 		// TODO Auto-generated method stub
 		//return String.format("Nome: %s, Notas: %s, Média: %.2f%nStatus: %s%n%s%n", name, Arrays.toString(notas), getSvg(), resultadoFinal(svg), statusNotas(notas));

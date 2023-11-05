@@ -24,9 +24,9 @@ public class ExAbaixoDaMedia {
 		osk.nextLine();
 		double[] notas = new double[qtd];
 		
-		aluno = new Alunos(name, notas);
 		
 			for(int i = 0; i < notas.length; i++) {
+				aluno = new Alunos(i,name, notas);
 				System.out.printf("Nota %d de %s: ", i+1, name);
 				notas[i] = osk.nextDouble();
 		

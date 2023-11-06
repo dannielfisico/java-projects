@@ -8,7 +8,7 @@ public class AppExbirNumerosSomaMedia {
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
 		Scanner osk = new Scanner(System.in);
-		System.out.print("Quantos números deseja armazenar no vetor? ");
+		System.out.print("Quantos números INTEIROS deseja armazenar no vetor? ");
 		int quantity = osk.nextInt();
 		int[] numbers = new int[quantity];
 		double sum = 0;
@@ -25,7 +25,7 @@ public class AppExbirNumerosSomaMedia {
 		
 		double media = sum/numbers.length;
 		
-		System.out.print("\nSoma: "+ sum);
+		System.out.print("\nSoma: "+ String.format("%.0f", sum));
 		System.out.print("\nMédia: " + String.format("%.2f", media));
 		
 		

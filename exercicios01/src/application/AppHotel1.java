@@ -16,7 +16,7 @@ public class AppHotel1 {
 		char option = '0';
 		int rooms = 10;
 		int occupiedRooms = 0;
-		int aviableRooms = 10;
+		int aviableRooms = rooms;
 		HospedeHotel1[] hospede = new HospedeHotel1[rooms];
 		do {
 			System.out.println("\nVer quartos vagos (1)\nAlugar quartos (2)\nVer hospedes (3)");
@@ -97,9 +97,9 @@ public class AppHotel1 {
 			  }
 		
 			  
-		}while (option == '0');
+		}while (option == '0' && occupiedRooms < rooms );
 		
-		
+		System.out.println("Lotação máxima atingida");
 		
 		sc.close();
 

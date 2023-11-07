@@ -17,7 +17,7 @@ public class AppList1 {
 		List<String> list = new ArrayList<>();
 					
 		char response = 's';
-		
+		System.out.println("Digite alguns nomes de pessoas");
 		do {
 			System.out.print("Nome: ");
 			String name = sc.nextLine();
@@ -34,7 +34,31 @@ public class AppList1 {
 			
 		}
 		
+		System.out.println("Tamanho da lista: "+ list.size());
+		System.out.println("Vamos inseir novas pessoas na Lista");
+		System.out.print("Nome: ");
+		String name = sc.nextLine();
+		System.out.printf("Em que posição deseja add %s? ", name);
+		int position = sc.nextInt();
+		sc.nextLine();
+		list.add(position, name);
+		System.out.println("Veja como ficou sua lista agora:");
+		for(String n : list) {
+			System.out.println(n);
+		}
+		System.out.println("Tamanho da lista: "+ list.size());
+		System.out.println("Vamos remover elementos da lista");
+		System.out.println("Informe o nome que deseja remover: ");
+		String nameToRemove = sc.nextLine();
+		list.remove(nameToRemove);
+		System.out.println("Lista atualizada:");
+		for(String names : list) {
+			System.out.println(names);
+		}
 		
+		System.out.println("Usando o removeIf");
+		System.out.print("Informe a primeira letra dos nomes a serem removidos: ");
+		char letra = sc.next
 		
 		sc.close();
 	}

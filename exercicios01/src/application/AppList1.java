@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class AppList1 {
 
@@ -58,7 +59,43 @@ public class AppList1 {
 		
 		System.out.println("Usando o removeIf");
 		System.out.print("Informe a primeira letra dos nomes a serem removidos: ");
-		char letra = sc.next
+		char letra = sc.next().charAt(0);
+		list.removeIf(x -> x.charAt(0) == letra); //Função Lambda PREDICADO retorna true/false
+		System.out.println("Lista atualizada");
+		for(String names : list) {
+			System.out.println(names);
+		}
+		//Encontar a posição de um elemento na lista usando o indexOf
+		/*
+		 * System.out.println("--------------------------------------------");
+		 * System.out.print("Quer saber o indexOf de quem? "); String pessoa =
+		 * sc.nextLine(); System.out.println("#################"); int n =
+		 * list.indexOf(pessoa);
+		 * 
+		 * System.out.printf("Index of de %s: %d%n", pessoa, n);
+		 */
+		System.out.println("--------------------------------------------");
+		System.out.println("Filtrar por letra.\nInforme a letra para realizar o filtro: ");
+		char l = sc.next().charAt(0);
+		List<String> result = list.stream().filter(x -> x.charAt(0) == l).collect(Collectors.toList());
+		for(String res : result) {
+			System.out.println(res);
+		}
+		System.out.println("--------------------------------------------");
+		System.out.println("Lista: list");
+		for(String x : list) {
+			System.out.println(x);
+		}
+		System.out.println("--------------------------------------------");
+		System.out.println("Encotrar primeiro elemento que inicia com determinada letra");
+		System.out.println("Letra: ");
+		char l2 = sc.next().charAt(0);
+		String pname = list.stream().filter(x -> x.charAt(0) == l2).findFirst().orElse(null);
+		System.out.println(pname);
+		System.out.println("--------------------------------------------");
+		
+		
+		
 		
 		sc.close();
 	}

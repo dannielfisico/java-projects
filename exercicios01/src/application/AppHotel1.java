@@ -13,15 +13,18 @@ public class AppHotel1 {
 		System.out.println("##################################################");
 		System.out.println();
 		System.out.println("############### MENU PRINCIPAL ###################");
-		HospedeHotel1[] hospede = new HospedeHotel1[10];
 		char option = '0';
+		int rooms = 10;
+		int occupiedRooms = 0;
+		int aviableRooms = 10;
+		HospedeHotel1[] hospede = new HospedeHotel1[rooms];
 		do {
 			System.out.println("\nVer quartos vagos (1)\nAlugar quartos (2)\nVer hospedes (3)");
 			System.out.println();
 			option = sc.next().charAt(0);
 			sc.nextLine();
 			  if(option == '1') {
-				  System.out.println("Quartos Vagos");
+				  System.out.println("Quartos Vagos: "+aviableRooms);
 					for(int i = 0; i < hospede.length; i++) {
 						if(hospede[i] == null) {
 							System.out.print(i + "-> Vago | ");
@@ -41,7 +44,9 @@ public class AppHotel1 {
 				  int room = sc.nextInt();
 				  	if(hospede[room] == null) {
 				  		hospede[room] = new HospedeHotel1(room, name, email);				  		
-				  		System.out.printf("\nQuarto %d liberado para o hospede %s.\n", room, name);
+				  		System.out.printf("\nQuarto %d alugado para o hospede %s.\n", room, name);
+				  		occupiedRooms++;
+				  		aviableRooms--;
 				  	} else {
 				  		
 				  		do {
@@ -57,22 +62,22 @@ public class AppHotel1 {
 				  				}
 				  			}
 				  			
-				  			System.out.println("Quarto: ");
+				  			System.out.println("\nQuarto: ");
 				  			room = sc.nextInt();
 				  			
 				  			
 				  		}while(hospede[room] != null);
 				  		
 				  		hospede[room] = new HospedeHotel1(room, name, email);				  		
-				  		System.out.printf("\nQuarto %d liberado para o hospede %s.\n", room, name);
-				  	
-				  		
+				  		System.out.printf("\nQuarto %d alugado para o hospede %s.\n", room, name);
+				  		occupiedRooms++;
+				  		aviableRooms--;
 				  		option = '0';		  		
 				  	}
 						  
 				  option = '0';
 			  } else if(option == '3')  {
-				  System.out.println("Quartos ocupados:");
+				  System.out.println("Quartos ocupados: "+occupiedRooms);
 				  boolean status = true;
 				  for(int i = 0; i < hospede.length; i++) {
 					  if(hospede[i] != null) {

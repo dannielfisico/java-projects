@@ -57,12 +57,16 @@ public class AppHotel1 {
 				  				}
 				  			}
 				  			
-				  			System.out.println("\nQuarto: ");
+				  			System.out.println("Quarto: ");
 				  			room = sc.nextInt();
+				  			
+				  			
 				  		}while(hospede[room] != null);
 				  		
 				  		hospede[room] = new HospedeHotel1(room, name, email);				  		
-				  		System.out.printf("\nQuarto %d liberado para o hospede %s.\n", room, name);		  		
+				  		System.out.printf("\nQuarto %d liberado para o hospede %s.\n", room, name);
+				  	
+				  		
 				  		option = '0';		  		
 				  	}
 						  
@@ -86,9 +90,12 @@ public class AppHotel1 {
 				  option = '0';
 				  
 			  }
-					  
+		
+			  
 		}while (option == '0');
-
+		
+		
+		
 		sc.close();
 
 	}

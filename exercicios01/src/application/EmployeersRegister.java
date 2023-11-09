@@ -46,6 +46,7 @@ public class EmployeersRegister {
 				} else {
 					System.out.print("Entre com a porcentagem: ");
 					double precentage = sc.nextDouble();
+					emp.increaseSalary(precentage);
 				}
 				
 				System.out.println();

@@ -22,6 +22,11 @@ public class EmployeersRegister {
 				System.out.println("\nEmployee #"+response);
 				System.out.print("Id: ");
 				int id = sc.nextInt();
+				while(hasId(list, id)) {
+					System.out.print("Este id está em uso. Tente Outro: ");
+					id = sc.nextInt();
+				}
+				
 				sc.nextLine();
 				System.out.print("Name: ");
 				String name = sc.nextLine();
@@ -35,9 +40,16 @@ public class EmployeersRegister {
 			
 			System.out.print("\nEntre com o Id do funcionário que receberá um aumento salarial: ");
 			int id = sc.nextInt();
-			
-			
-			
+			Employee emp = list.stream().filter(x -> x.getId() ==  id).findFirst().orElse(null);
+				if(emp == null) {
+					System.out.println("Este id não está cadastrado!");
+				} else {
+					System.out.print("Entre com a porcentagem: ");
+					double precentage = sc.nextDouble();
+				}
+				
+				System.out.println();
+					
 			
 			
 			System.out.println("\nLista de funcionário:");
@@ -47,6 +59,12 @@ public class EmployeersRegister {
 		
 		
 		sc.close();
+	}
+	
+	public static boolean hasId(List<Employee> list, int id) {
+		Employee emp = list.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+		
+		return emp != null;
 	}
 
 }

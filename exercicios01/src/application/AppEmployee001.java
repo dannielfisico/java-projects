@@ -38,24 +38,33 @@ public class AppEmployee001 {
 		
 		System.out.print("\nInforme o Id do funcionário que terá o salário aumentado: ");
 		int id = osk.nextInt();
+			
+		Integer pos = position(list, id);
 		
-			for(int i = 0; i < list.size(); i++) {
-				if(list.get(i).getId() == id) {
-					System.out.print("Informe a porcentagem: ");
-					double percent = osk.nextDouble();
-					list.get(i).increaseSalary(percent);
-				} else {
-					System.out.printf("\nO id (%d) não foi localizado.\n", id);
+		if(pos != null) {
+			System.out.print("Informe a porcentagem: ");
+			double percent = osk.nextDouble();
+			list.get(pos).increaseSalary(percent);
+		} else {
+			System.out.println("Esse id não existe");
+		}
+		
+		System.out.println("\nLista de funcionários:");
+		for(int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
+		}
 					
-				}
-			}
-		
-			for(int i = 0; i < list.size(); i++) {
-				System.out.println(list.get(i));
-			}
-		
 		osk.close();
 
 	}
-
+	
+	public static Integer position(List<Employee001> list, int id) {
+		for(int i = 0; i < list.size(); i++) {
+			if(list.get(i).getId() == id) {
+				return i;
+			} 
+		}
+		return null;
+	}
+	
 }

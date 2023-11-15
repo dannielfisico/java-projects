@@ -40,7 +40,7 @@ public class Employee001 {
 	}
 
 	public String toString() {
-		return id + ", " + name + ", " + salary;
+		return id + ", " + name + ", " + String.format("%.2f", salary);
 	}
 	
 
